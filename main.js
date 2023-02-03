@@ -46,7 +46,7 @@ function KorAgeCalc(BY, BM, BD) {
 
 function abouts() {
   var age = AgeCalc(2009, 7, 17)
-var about_el = document.querySelector("#about")
+  var about_el = document.querySelector("#about")
 
 const content = ['def ', ' My_Self', ' ( ): <br>⠀⠀name ', '= ' ,"'DM'", '<br>⠀⠀age ', '= ' ,age, '<br>⠀⠀email ', '= ', "'happydm09@naver.com'"]
 
