@@ -18,6 +18,7 @@ function inp() {
   } else {
     lang = 0
   }
+  alert(lang)
   abouts()
   GetSolvedacData();
 }
