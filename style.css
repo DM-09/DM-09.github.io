@@ -111,6 +111,9 @@
         background-color: #212529;
         height: 200px;
       }
+      .to {
+        bottom: 0px
+      }
     }
 
     /* 태블릿 */
@@ -172,6 +175,9 @@
       .end {
         background-color: #212529;
         height: 200px;
+      }
+     .to {
+        bottom: 0px
       }
     }
 
@@ -236,5 +242,8 @@
       .end {
         background-color: #212529;
         height: 200px;
+      }
+      .to {
+        bottom: 100px
       }
     }
