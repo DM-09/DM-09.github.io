@@ -238,6 +238,6 @@
       .end {
         background-color: #212529;
         height: 200px;
-        position: absolute;width: 99%;vertical-align: middle; bottom: 100px
+        position: absolute;width: 99%;vertical-align: middle;
       }
     }
