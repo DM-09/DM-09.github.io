@@ -1,5 +1,5 @@
 //lang
-function lang() {
+function lan() {
   var la = document.querySelector("#lang")
 var lang = la.style.width
 const toggle = document.querySelector("#ko");
@@ -122,7 +122,7 @@ async function GetSolvedacData() {
 
 //onload
 window.onload = function(){
-   lang()	
+   lan()	
    GetSolvedacData();
    abouts();
 }
