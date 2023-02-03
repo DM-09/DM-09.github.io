@@ -12,7 +12,6 @@ if (navigator.language == 'ko-KR') {
 
 function inp() {
   const toggle = document.querySelector("#ko");
-  alert('sd' + lang)
   if (toggle.checked) {
     lang = 1
   } else {
