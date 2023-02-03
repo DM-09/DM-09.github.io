@@ -112,7 +112,7 @@
         height: 200px;
       }
       .to {
-        bottom: 0px
+        position: absolute;width: 99%;vertical-align: middle; bottom: 0px
       }
     }
 
@@ -177,7 +177,7 @@
         height: 200px;
       }
      .to {
-        bottom: 0px
+        position: absolute;width: 99%;vertical-align: middle; bottom: 0px
       }
     }
 
@@ -244,6 +244,6 @@
         height: 200px;
       }
       .to {
-        bottom: 100px
+        position: absolute;width: 99%;vertical-align: middle; bottom: 100px
       }
     }
