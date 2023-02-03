@@ -1,23 +1,25 @@
 //lang
+var lang = 0;
+
 function lan() {
-  var la = document.querySelector("#lang")
-var lang = la.style.width
 const toggle = document.querySelector("#ko");
 
 if (navigator.language == 'ko-KR') {
-  lang = '1px'
+  lang = 1
   toggle.checked = true
 }
+}
 
-toggle.addEventListener('change', () => {
+function inp() {
+  const toggle = document.querySelector("#ko");
+  
   if (toggle.checked) {
-    lang = '1px'
+    lang = 1
   } else {
-    lang = '2px'
+    lang = 0
   }
   abouts()
   GetSolvedacData();
-});
 }
 
 // introduce and about code
@@ -49,7 +51,7 @@ const content = ['def ', ' My_Self', ' ( ): <br>⠀⠀name ', '= ' ,"'DM'", '<br
 
 var about = [`<br>저는 프로그래머가 꿈인 ${KorAgeCalc(2009,7,17)}살(만${age}살) DM 입니다. 주로 파이썬을 다루며 취미로 웹 페이지도 만듭니다. `, `<br>I'm ${age} years old DM who dream programer. I mainly deal with Python and also create web pages as a hobby.`]
 
-if (lang == '1px') { // 한국어
+if (lang == 1) { // 한국어
   about_el.innerHTML = about[0]
 } else {
   about_el.innerHTML = about[1]
@@ -101,7 +103,7 @@ async function SolvedacTier(idx) {
     }
 
     return `${all_tier[tier]} ${all_subtier[subtier]}`
-}
+};
 async function GetSolvedacData() {
   let Response = await fetch(`https://solved.ac/api/v3/user/show?handle=dongmin`);
   let data = await Response.json();
@@ -109,7 +111,7 @@ async function GetSolvedacData() {
   let tier = document.querySelector('#solvedTier');
   let calculateTier = await SolvedacTier(data.tier);
   
-  if (lang == '1px') { // 한국어
+  if (lang == 1) { // 한국어
     count.innerHTML = `푼 문제 수 <span class='txt-blue'>${data.solvedCount}</span>`;
   tier.innerHTML = `티어 <span class='txt-blue'>${calculateTier}</span>`;
   } else {
@@ -118,7 +120,7 @@ async function GetSolvedacData() {
   }
 
   return data;
-}
+};
 
 //onload
 window.onload = function(){
