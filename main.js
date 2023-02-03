@@ -19,9 +19,6 @@ toggle.addEventListener('change', () => {
   GetSolvedacData();
 });
 }
-	window.onload = function(){
-   lang()
-  }
 
 // introduce and about code
 function AgeCalc(BY, BM, BD) {
@@ -123,5 +120,9 @@ async function GetSolvedacData() {
   return data;
 }
 
-GetSolvedacData();
-abouts();
+//onload
+window.onload = function(){
+   lang()	
+   GetSolvedacData();
+   abouts();
+}
