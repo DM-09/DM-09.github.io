@@ -1,5 +1,6 @@
 //lang
-var la = document.querySelector("#lang")
+function lang() {
+  var la = document.querySelector("#lang")
 var lang = la.style.width
 const toggle = document.querySelector("#ko");
 
@@ -17,6 +18,10 @@ toggle.addEventListener('change', () => {
   abouts()
   GetSolvedacData();
 });
+}
+	window.onload = function(){
+   lang()
+  }
 
 // introduce and about code
 function AgeCalc(BY, BM, BD) {
