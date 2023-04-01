@@ -8,3 +8,13 @@ function LoadPost() {
 window.onload = LoadPost;
 
 window.onhashchange = LoadPost;
+
+function Copy() {
+  var txt = document.createElement('textarea');
+  document.body.appendChild(txt);
+  txt.value = location.href
+  txt.select();
+  document.execCommand("copy");
+  document.body.removeChild(txt);
+  alert('복사됨 Copied')
+}
