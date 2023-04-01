@@ -18,8 +18,8 @@
 <summary>Beta verion 베타 버전</summary>
 
 ### 0.3 ver
-- 0.2 버전의 UI는 그대로 부트스트랩으로 개발하여 더 발전된 모습
+- 0.2 버전의 UI는 그대로 부트스트랩으로 개발하여 더 발전된 모습, 블로그 추가
 (현재 개발중)
-- The 0.2 version of UI remains the same, developed with BootStrap to make it look more advanced
+- The 0.2 version of UI remains the same, developed with BootStrap to make it look more advanced, Add the blog
 (Currently under development)
 </details>
