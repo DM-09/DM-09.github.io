@@ -20,12 +20,16 @@ function Eng() {
   la = 0
 }
 
-var l = navigator.language
+window.onload = Load;
+
+function Load() {
+  var l = navigator.language
  if (l == 'ko-KR') {
    Kor()
  } else {
    Eng()
  }
+}
 
 function Click() {
   if (la == 1) {
