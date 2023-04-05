@@ -3,6 +3,15 @@ function LoadPost() {
   var script = document.createElement('script');
   script.src = `Data/${x}.js`;
   document.body.appendChild(script);
+  
+  if (x == '') {
+    location.href = 'https://dm-09.github.io/Blog/'
+  }
+
+  var m_title = document.querySelector("#m-title")
+  var m_close = document.querySelector("#m-close")
+  m_title.innerHTML = 'No Message 메시지 없음'
+  m_close.innerHTML = 'Close 닫기'
 }
 
 window.onload = LoadPost;
