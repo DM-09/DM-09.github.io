@@ -30,7 +30,20 @@
      <div> <br></div>
       <p id='content'></p>
      <br>
-     <button class="btn btn-secondary mx-2"id='Copy' onClick='Copy()'><i class="bi bi-share-fill"></i></button>
+     <!-- Button trigger modal -->
+     <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#message">
+  <i class="bi bi-chat-right-text-fill"></i>
+</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="message" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+        <div class="modal-body"><h5 class="modal-title font-weight-lg" id='m-title'></h5><p class="font-weight-md" id='m-content'></p><div class="d-grid gap-2 d-flex justify-content-end"><button button-color="btn-light" button-text-color="text-dark" is-dismiss="true" class="col col-md-auto btn btn-light text-dark" data-bs-dismiss="modal" id='m-close'>취소</button></div></div>
+    </div>
+  </div>
+</div>
+     <button class="btn btn-secondary mx-2"id='Copy' onClick='Copy()'><i class="bi bi-share-fill"></i>              </button>
     </div>
   </body>
 </html>
