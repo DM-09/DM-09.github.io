@@ -1,91 +1,106 @@
 <!Doctype html>
 <html lang="ko">
- <head>
-  <meta charset = "utf-8">
-  <title>DM</title>
-   <link rel="stylesheet" type="text/css" href="style.css">
-   <script src='./main.js'></script>
- </head>
- <body style='background-color:#111316; color:white'>
-   <div class='btn-br'></div>
-   <label>
-  <input id='ko' role="switch" type="checkbox" onClick='inp()'/>
-  <span style='font-size:0.5em'>한국어(Kor)</span>
-</label>
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Files -->
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>DM</title>
+  </head>
+  <body style='background-color:#111316; color:white' class='h-100'>
+      <nav class="navbar bg-dark sticky-top">
+        <!-- lang dropdown -->
+        <button class="btn btn-secondary dropdown-toggle mx-4" data-bs-toggle="dropdown" id='lang'>Language</button>
+       <ul class="dropdown-menu dropdown-menu-dark mx-2">
+        <li class="dropdown-item" id='eng' onClick='Eng()'>English(영어)</li>
+        <li class="dropdown-item" id='kor' onClick='Kor()'>한국어(Kor)</li>
+       </ul>
+    </nav>
    <center>
-     <!-- introduce section(code part) -->
-     <center>
-       <br>
-  <div class="main_image">
-        <div width="23%", class='codebox'>
-      <span class="main_image_text" style="font-size:10px">  
-       <span id='text'>
-       <span style='color:#FF5E00' id='def'class='codesize'></span>
-      <span style='color:#E6B2FF'id='funn'class='codesize'></span>
-      <span id='na'class='codesize'></span> <span style='color:#79c0ff'id='ne'class='codesize'></span>
-      <span style='color:#a5d6ff'id='name'class='codesize'></span>
-      <span id='aa'class='codesize'></span>
-      <span style='color:#79c0ff'id='ae'class='codesize'></span>
-      <span style='color:#a5d6ff'id='age'class='codesize'></span>
-      <span id='ea'class='codesize'></span></span>
-      <span style='color:#79c0ff'id='en'class='codesize'></span>
-      <span style='color:#a5d6ff'id='email' class='codesize'></span></span>
-  </div>
-</center>
-     <!-- about section -->
-     <center>
-       <br><br><br><br><br>
-       <div class='card'>
-       <div class='banner_size'>About</div>
-       <div id='about' class='t_size'></div><br>
-     </center>
-     <!-- project section -->
-     <div>
-     <div class='br'></div>
-     <div class='card'>
-       <div class='banner_size'>Github Project</div>
-       <br>
-       <div class='t_size'>
-         <div class='gt'>Python</div>
-         <div><a href="https://github.com/DM-09/PythonCode">Python Code</a> <a href="https://github.com/DM-09/BeakJoonCode">BeakJoon Code</a></div><div class='btn-br'></div>
-         <div class='gt'>Web</div>
-         <div><a href="https://github.com/DM-09/tools">tools</a> <a href="https://github.com/DM-09/CountDown">CountDown</a></div>
-         <div class='btn-br'></div>
-         
-          <div class='gt'>etc.</div>
-         <div><a href="https://github.com/DM-09/JavaScriptCode">JavaScriptCode</a> 
-         <div class='btn-br'></div>
-       </div>
-     </div>
-    </div>
-     <div>
-       <div class='btn-br'></div>
-       <button class="btn" type="button" onclick="window.open('https://github.com/DM-09')">Github</button>
-       </div>
-     </div>
-     <!-- BeakJoon -->
-     <div>
-     <div class='br'></div>
-     <div class='card'>
-       <div class='banner_size'>BeakJoon</div>
-       <br>
-         <div id='SolvedCount' class='t_size'></div>
-         <div id='solvedTier' class='t_size'></div>
-       <div>
-       <br><button class="btn" type="button" style='width:48%'onclick="window.open('https://www.acmicpc.net/user/dongmin')">BeakJoon</button>
-       <button class="btn" type="button" style='width:48%'onclick="window.open('https://solved.ac/profile/dongmin')">Solved.ac</button>
-         <div class='btn-br'></div>
+     <br>
+     <div class='full-view'>
+       <div class='mt-5'> </div>
+       <div class='fs-4 mt-5'>
+       <span style='color:#ff7b72' id='def'>def </span><span style='color:#ffa657' id='DM'>DM</span><span id='para'>( ):     </span><br><span id='name'>    name </span><span style='color:#79c0ff' id='nn'>= </span><span style='color:#a5d6ff' id='name-area'>'DM'</span><br><span id='age'> age </span><span style='color:#79c0ff' id='an'>= </span><span style='color:#a5d6ff' id='age-area'>15</span>
       </div>
+       <div class="card border-secondary mt-5 rounded-4 bg-transparent container page mt-3" style='width:90%'>
+      <div class="card-body">
+       <p class="card-text my-3" id='about-de'></p>
      </div>
     </div>
-     <!-- end -->
-     <div class='end-br'></div>
-     <div class='end'>
-       <div class='s'></div>
-       <div class='nt'>@DM-09</div>
-       <div class='btn-br'></div>
-       <div class='t_size'><a style='color:gray;text-decoration-line: none;' href="https://github.com/DM-09/">Github</a></div>
-       </div>
+     </div>
+     <!-- Github -->
+     <div class="card border-secondary mb-2 rounded-4 bg-transparent container page" style='width:90%'>
+      <div class="card-body">
+       <div class="card-title mx-3" style='text-align:left;'><h2>My work</h2></div>
+       <p class="card-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-4 mb-2">
+             <div class='card bg-dark rounded-4 card-text' style='width:87%' onClick='Open(6)'><span style='color: #0d6efd' class='fs-5'>Python Code</span><span id='py-code-de'></span><h4><i class="bi bi-github"></i></h4>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 mb-2">
+             <div class='card bg-dark rounded-4 card-text' style='width:87%' onClick='Open(7)'><span style='color: #0d6efd' class='fs-5'>Anywhere Bing AI</span><span id='anywhere-de'></span><h4><i class="bi bi-github"></i></h4>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+             <div class='card bg-dark rounded-4 card-text mb-4' style='width:87%' onClick='Open(8)'><span style='color: #0d6efd' class='fs-5'>Tools</span><span id='tools-de'></span><h4><i class="bi bi-github"></i></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+    <a onClick='window.open("https://github.com/DM-09")' class="btn btn-dark rounded-3 container page mb-5" style='width:90%'>Github</a>
+    <div class='mb-3'></div>
+     <br><br>
+     <!-- Beakjoon -->
+     <div class="card border-secondary mb-5 rounded-4 bg-transparent container page" style='width:90%'>
+      <div class="card-body">
+       <div class="card-title mx-3" style='text-align:left;'><h2>Beakjoon</h2><h5 id='b-sum'></h5>         </div>
+       <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dongmin" alt="" style="max-width: 90%;">
+       <p class="card-text my-3" id='sol-de'></p>
+       <a onClick='window.open("https://www.acmicpc.net/user/dongmin")' class="btn btn-dark rounded-3" style='width:45%'>Beakjoon</a>
+       <a onClick='window.open("https://solved.ac/profile/dongmin")' class="btn btn-dark rounded-3" style='width:45%'>Solved.ac</a>
+     </div>
+    </div>
+    <div class='mb-3'> </div>
+    <br>
+     <!-- Skill -->
+     <div class="card border-secondary mb-4 rounded-4 bg-transparent container page" style='width:90%'>
+      <div class="card-body">
+       <div class="card-title mx-3" style='text-align:left;'><h2>Skills</h2></div>
+       <p class="card-text"></p>
+        <a class='btn bg-dark text-white my-3 rounded-3' onClick='Skill("Python")'> Python </a>
+        <a class='btn bg-dark text-white my-3 rounded-3' onClick='Skill("Web")'> Web </a>
+        <a class='btn bg-dark text-white my-3 rounded-3' onClick='Skill("Lua")'> Etc </a>
+        <div class='card bg-dark rounded-4 card-text' style='width:90%' id='sk-de'> <br> </div>
+     </div>
+    </div>
+    <div class='mb-3'> </div>
+    <div class='mb-4'> </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1">
+     <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+       <div class="modal-body"><h5 class="modal-title font-weight-lg" id='m-title'></h5><p class="font-weight-md" id='m-content'></p><div class="d-grid gap-2 d-flex justify-content-end"><button button-color="btn-light" button-text-color="text-dark" is-dismiss="true" class="col col-md-auto btn btn-light text-dark" data-bs-dismiss="modal" id='m-close'></button></div></div>
+        </div>
+      </div>
+    </div>
+     <!-- Footer -->
+     <footer class='bg-dark' style='text-align:left'>
+      <br><br>
+      <h3 class='mx-4'>@DM</h3>
+      <a class='a' style='color:white'><h5 id='SNS' class='mx-4'><i class="bi bi-github" onClick='Open(3)'></i> <i class="bi bi-envelope-fill" OnClick='Open(4)'></i> <i class="bi bi-three-dots-vertical" onClick='Add_SNS()'></i></h5></a>
+       <br>
+    </footer>
    </center>
  </body>
 </html>
