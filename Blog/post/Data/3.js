@@ -29,4 +29,24 @@ function Eng() {
   title.innerHTML = '100'
   date.innerHTML = '2023.05.28'
   topic.innerHTML = 'solved.ac'
-  content.innerHTML = `Streaks are accumulated by solving problems every day in succession.<br>As of today, we have reached 100 Streaks. <br>Starting from February 18 this year, we solved the problems for a total of 100 days in a row, beyond the start of school and ending on May 28, right before the exam period. <br><br> Most of the 100 questions were B5 questions. <br> So I solved all the B5 questions and got a total of two backgrounds. <br><br> I was proud, but a little 
+  content.innerHTML = `Streaks are accumulated by solving problems every day in succession.<br>As of today, we have reached 100 Streaks. <br>Starting from February 18 this year, we solved the problems for a total of 100 days in a row, beyond the start of school and ending on May 28, right before the exam period. <br><br> Most of the 100 questions were B5 questions. <br> So I solved all the B5 questions and got a total of two backgrounds. <br><br> I was proud, but a little stressed. I'm satisfied with having tried it once. I can feel a little relieved now. <br><br><a href='https://solved.ac/profile/dongmin'>Go to my profile to see it</a><br><br><img class='img-fluid' src ='https://github.com/DM-09/DM-09.github.io/assets/112751504/a13e0072-4c9a-46ec-b2b9-c40197b29154'></img>`
+  m_title.innerHTML = 'No Messasge'
+  m_content.innerHTML = ``
+  m_close.innerHTML = 'Close'
+  la = 0
+}
+
+var l = navigator.language
+ if (l == 'ko-KR') {
+   Kor()
+ } else {
+   Eng()
+ }
+
+function Click() {
+  if (la == 1) {
+    Eng()
+  } else {
+    Kor()
+  }
+}
