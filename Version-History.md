@@ -29,4 +29,8 @@
 ### 0.31 ver
 - 블로그와 Docs(페이지 모음)까지 추가하여 첫 메인 버전이 되었다.
 - It became the first main version by adding a blog and Docs (a collection of pages).
+
+### 1.0 ver
+- 첫 정식 버전, 오타 수정 및 UI 변경/추가 등
+- Misunderstanding fixes and UI changes/adds, etc.
 </details>
