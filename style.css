@@ -5,3 +5,16 @@ body { margin: 0; }
 body::-webkit-scrollbar {
   display: none;
 }
+
+@media(prefers-color-scheme:light){
+  .body{color: #7286D3; ba ckground-color: #EEF1FF}
+}
+     
+@media(prefers-color-scheme:dark){
+  .body{color: white; background-color: #111316}
+}
+
+.good {color: #A566FF}
+.soso {color: #6799FF}
+.bad {color: #A6A6A6}
+.name {color: #3F6CA5}
