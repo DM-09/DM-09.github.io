@@ -1,8 +1,13 @@
 var lang = 0
 var lang_el;
+var dark = 1
+
 var c_n;
 var c_modal = 0
+var c_pro = 0
+var pro_max = 2
 
+// functions
 function Eng() {
   lang = 0
   c_n = ''
@@ -27,6 +32,18 @@ function Language() {
     Eng()
   }
 }
+function Myself() {
+  var el = ['name', 'intro']
+  var ko = ['신동민', `${KorAgeCalc(2009, 7, 17)}살(만 ${AgeCalc(2009, 7, 17)}살)ㆍ웹/백엔드 개발`]
+  var en = ['Dongmin Shin', `${AgeCalc(2009, 7, 17)} year-oldㆍWeb/backend`]
+  
+  for (var i=0; i < el.length; i++) {
+    var de = en[i]
+    if (lang == 1) {de = ko[i]}
+    var n = `#${el[i]}`
+    $(n).html(de)
+  }
+}
 
 function KorAgeCalc(BY, BM, BD) { 
   var now = new Date();
@@ -35,7 +52,6 @@ function KorAgeCalc(BY, BM, BD) {
   var age = Number(NT[0] - BY) + 1
   return  age
 };
-
 function AgeCalc(BY, BM, BD) {
   var now = new Date();
   var NT = [now.getFullYear(), now.getMonth() + 1, now.getDate()]
@@ -58,6 +74,16 @@ function Copy(t) {
   document.body.removeChild(txt);
   alert('복사됨 Copied')
 }
+function Open(n) {
+  var page = ['https://github.com/DM-09/BeakjoonCode', 'https://github.com/DM-09/Web-Extension', 'https://github.com/DM-09', 'mailto:happydm09@naver.com', 'https://addons.mozilla.org/en-US/firefox/user/17626890/', 'https://github.com/DM-09/PythonCode','https://github.com/DM-09/Bing-AI-for-Any-browser', 'https://github.com/DM-09/tools']
+  if (lang == 1) {
+    page[4] = 'https://addons.mozilla.org/ko/firefox/user/17626890/'
+  } else {
+    page[4] = 'https://addons.mozilla.org/en-US/firefox/user/17626890/'
+  }
+  var url = page[n - 1]
+  window.open(url)
+}
 
 function Add_SNS() {
   var txt = `<i class="bi bi-github" onClick='Open(3)'></i> <i class="bi bi-envelope-fill" OnClick='Open(4)'></i> <i class="bi bi-browser-firefox" onClick='Open(5)'></i> <i class="bi bi-discord" onClick='Copy("DM#9596")'></i> <i class="bi bi-plus-circle" data-bs-toggle="modal" data-bs-target="#modal"></i>`
@@ -65,10 +91,10 @@ function Add_SNS() {
   document.querySelector("#SNS").innerHTML = txt
   More_SNS()
 }
-
 function More_SNS() {
-  var e = ['More Account', `<br><li><a href='https://github.com/happydm09'>2nd Github Account</a></li><li><a href='https://replit.com/@DM-09'>Replit</a></li>`]
-  var k = ['기타 계정', `<br><li><a href='https://github.com/happydm09'>깃허브 부계정</a></li><li><a href='https://replit.com/@DM-09'>Replit</a></li>`]
+  var e = ['More Account', `<br><li><a href='https://github.com/happydm09'>2nd Github Account</a></li><li><a href='https://dm-09.github.io/Blog/'><i class="bi bi-chat-right-text"></i> Blog</a></li><li><a href='https://dm-09.github.io/Docs/'><i class="bi bi-file-earmark-check"></i>Docs</a></li><li><a href='https://replit.com/@DM-09'>Replit</a></li>`]
+  
+  var k = ['기타 계정', `<br><li><a href='https://github.com/happydm09'>깃허브 부계정</a></li><li><a href='https://dm-09.github.io/Blog/'><i class="bi bi-chat-right-text"></i> 블로그</a></li><li><a href='https://dm-09.github.io/Docs/'><i class="bi bi-file-earmark-check"></i>Docs</a></li><li><a href='https://replit.com/@DM-09'>Replit</a></li>`]
   var el = [document.querySelector("#m-title"), document.querySelector("#m-content")]
   
   if (c_modal == 0) {
@@ -82,72 +108,188 @@ function More_SNS() {
   }
 }
 
-function Open(n) {
-  var page = ['https://github.com/DM-09/BeakjoonCode', 'https://github.com/DM-09/Web-Extension', 'https://github.com/DM-09', 'mailto:happydm09@naver.com', 'https://addons.mozilla.org/en-US/firefox/user/17626890/', 'https://github.com/DM-09/PythonCode','https://github.com/DM-09/Bing-AI-for-Any-browser', 'https://github.com/DM-09/tools']
-  if (lang == 1) {
-    page[4] = 'https://addons.mozilla.org/ko/firefox/user/17626890/'
-  } else {
-    page[4] = 'https://addons.mozilla.org/en-US/firefox/user/17626890/'
-  }
-  var url = page[n - 1]
-  window.open(url)
-}
-
 function all_fun() {
   boj()
   More_SNS()
-  de()
+  project(c_pro)
+  Myself()
 }
 
 function boj() {
   var de = document.querySelector("#sol-de")
 
   if (lang == 1) {
-    de.innerHTML = "꾸준히 문제를 풀고 있으며 알고리즘 실력을 키워나가고 있습니다. <br><h8><a href='' class='a' onClick='Open(1)' style='color:gray'>(깃허브 리포지토리)</a></h8>"
+    de.innerHTML = "꾸준히 문제를 풀고 있으며 알고리즘 실력을 키워나가고 있습니다. <br> 100일 연속으로 문제를 해결했었습니다. <br> <h8><a href='' class='a' onClick='Open(1)' style='color:gray'>(깃허브 리포지토리)</a></h8>"
   } else {
-    de.innerHTML = "I am constantly solving problems and improving my algorithm skills.<br><h8><a onClick='Open(1)' style='color:gray'>(Github Repository)</a></h8>"
+    de.innerHTML = "I am constantly solving problems and improving my algorithm skills.<br> I have been solved the problem for 100 days in a row. <br> <h8><a onClick='Open(1)' style='color:gray'>(Github Repository)</a></h8>"
   }
 }
-
-function de() {
-  var el = [document.querySelector("#py-code-de"), document.querySelector("#anywhere-de"), document.querySelector("#tools-de"), document.querySelector("#about-de"), document.querySelector("#age-area")]
-  var ko = ['파이썬으로 만든 것들', '모든 브라우저에서 Bing AI를 쓸 수 있는 확장', '유용한 웹 도구 모음', `저는 프로그래머가 꿈인 ${KorAgeCalc(2009, 7, 17)}살 신동민(DM)입니다. <br> 주로 파이썬을 다루고 취미로 웹도 만듭니다.`]
-  var en = ['Things made with python', 'A web extension that allows you to use Bing AI in any browser', 'A collection of useful web tools',  `I am ${AgeCalc(2009, 7, 17)}-year-old Shin Dong-min (DM) who dreams of becoming a programmer. <br> I mainly deal with Python and also create web as a hobby.`]
-  
-  if (lang == 1) {
-    el[0].innerHTML = ko[0]
-    el[1].innerHTML = ko[1]
-    el[2].innerHTML = ko[2]
-    el[3].innerHTML = ko[3]
-    el[4].innerHTML = KorAgeCalc(2009, 7, 17)
-  } else {
-    el[0].innerHTML = en[0]
-    el[1].innerHTML = en[1]
-    el[2].innerHTML = en[2]
-    el[3].innerHTML = en[3]
-    el[4].innerHTML = AgeCalc(2009, 7, 17)
-  }
-}
-
 function Skill(name) {
   var de = document.querySelector("#sk-de")
-  var sk_ko = {'Python':'가장 주로 쓰는 언어이며 웬만한 것은 구현 가능합니다. <br> ', 'Web':"BootStrap을 사용할 줄 알며 간단한 웹을 만들 수 있습니다. <br> <span>또한 <a href='' onClick='Open(2)' class='a' style='color: gray'>웹 확장</a>까지 만듭니다.</span><br>", 'Lua' : `기본 문법을 알며 한 플랫폼에서 간단한 게임도 만들었습니다. <span style='color: #0d6efd' class='fs-4 my-2'>Java</span> 안드로이드 스튜디오에서 간단한 앱을 만들어 봤으며 기초 문법만 압니다.<br>​`}
+  var tab = {'Web': `<br><li class="bi bi-bootstrap mb-1 soso"> - Bootstrap</span></li><li class='soso'><i class="fab fa-js-square mb-1"></i> - Javascript</li><li class='soso'><i class="fa-solid fa-puzzle-piece"></i> - Extension</li><br>`, 'Back' : `<br><li class='good'><i class="fa-brands fa-python mb-1"></i> - Python</li><li class='soso'><span class="fa-light fa-square"></span> - Lua</li><br>`, 'Other': `<br><li class='soso mb-1'><i class="fa-brands fa-github"></i> - Github</li><li class='bad'><i class="fa-brands fa-android"></i> - App(Java)</li><br>`}
   
-  var sk_en = {'Python':"It's the most use language and i can almost implement anything. <br> ", "Web" : "I can use Bootstrap and create a simple web. <br> <span> Also I make <a onClick='Open(2)' class='a' href='' style='color: gray'> web extension.</a></span><br>", 'Lua' : `
-I know the basic grammar and even made a simple game on one platform. <span style='color: #0d6efd' class='fs-4 my-2'>Java</span> I've made a simple app in Android Studio and I only know basic grammar.<br>​` }
+  var ko = {'Web' : `취미로 웹 제작을 하고 있고 <br> <a href='https://github.com/DM-09/Web-Extension'>브라우저 확장도 만듭니다.</a>`, 'Back' : `파이썬을 가장 잘 다루며 Lua도 할 줄 압니다.`, 'Other' : `깃허브도 조금 합니다. 안드로이드 앱은 거의 못 만듭니다.`}
   
-  if (lang == 1) {
-    de.innerHTML = `<span style='color: #0d6efd' id='sk-n' class='fs-4 my-2'>${name}</span>${sk_ko[name]}`
-  } else {
-    de.innerHTML = `<span style='color: #0d6efd' id='sk-n' class='fs-4 my-2'>${name}</span>${sk_en[name]}`
-  }
+  var en = {'Web' : `I do web creation as a hobby, <br> <a href='https://github.com/DM-09/Web-Extension'>I also create browser extensions.</a>`, 'Back' : `I mainly use Python best and knows Lua as well.`, 'Other': `I can Github also does a little bit. I almost can't make  Android apps`}
+  var n = en[name]
+  
+  if (lang == 1) {n = ko[name]}
+  
+  de.innerHTML = tab[name] + '<h6>' + n + '</h6><br>'
   if (c_n == name) {
     de.innerHTML = ' <br> '
     c_n = ''
   } else { c_n = name }
 }
 
+function project(n) {
+  var name = ['<i class="fa-solid fa-puzzle-piece"></i> Anywhere Bing AI', '<i class="fas fa-globe-americas"> </i> Tools', '<i class="fas fa-globe-americas"> </i> CountDown']
+  
+  var ko_de = [`모든 브라우저에서 Bing AI를 사용할 수 있게 합니다. <br> 또한 여기서만 볼 수 있는 <br> 추가 기능까지 제공합니다.`, `유용한 도구들을 웹에서 쓸 수 있는 사이트 입니다. <br> 다양한 기능들이 많습니다.`, `새해 카운트다운 사이트 입니다. <br> 매년 새로 업데이트 됩니다.`]
+  
+  var en_de = [`Make Bing AI available in any browser. <br> It also provides <br> function only available here.`, `This is a site where you can use useful tools on the web. <br> There are many different functions.`, `This is a new year countdown site. <br> It is updated every year.`]
+  
+  var de = en_de[n]
+  var a = 'dark'
+  if (lang == 1) {de = ko_de[n]}
+  if (dark == 0) {a = 'secondary'}
+  
+  var btns = [`<a id='btn_1' onClick='window.open("https://addons.mozilla.org/en-US/firefox/addon/anywhere-bing-ai/")' class='btn btn-${a} rounded-3 mb-1'><i class="fa-brands fa-firefox-browser"></i> <i class="fa-solid fa-angle-right"></i></a> <a id='btn_2' onClick='window.open("https://github.com/DM-09/Anywhere-Bing-AI")' class='btn btn-${a} rounded-3 mb-1'><i class="fa-brands fa-github"></i> <i class="fa-solid fa-angle-right"></i></a>`, 
+              
+`<a id='btn_1' onClick='window.open("https://dm-09.github.io/tools/")' class='btn btn-${a} rounded-3 mb-1'><i class="fas fa-globe-americas"></i> <i class="fa-solid fa-angle-right"></i></a> <a id='btn_2'onClick='window.open("https://github.com/DM-09/tools")' class='btn btn-${a} rounded-3 mb-1'><i class="fa-brands fa-github"></i> <i class="fa-solid fa-angle-right"></i></a>`, 
+ 
+`<a id='btn_1' onClick='window.open("https://dm-09.github.io/CountDown/")' class='btn btn-${a} rounded-3 mb-1'><i class="fas fa-globe-americas"></i> <i class="fa-solid fa-angle-right"></i></a> <a id='btn_2'onClick='window.open("https://github.com/DM-09/CountDown")' class='btn btn-${a} rounded-3 mb-1'><i class="fa-brands fa-github"></i> <i class="fa-solid fa-angle-right"></i></a>`]
+  
+  $('#c_title').html(name[n])
+  $('#c_txt').html(de + '<br><br>' + btns[n])
+}
+function next() {
+  if (c_pro != pro_max) {
+    var c = $('#b_left').attr('class').replace('disabled', '')
+    $('#b_left').attr('class', c)
+    c_pro += 1
+    project(c_pro)
+  }
+  
+  if (c_pro == pro_max) {
+    var c = $('#b_right').attr('class')
+    $('#b_right').attr('class', c + ' disabled')
+  }
+}
+function preview() {
+   if (c_pro != 0) {
+    var c = $('#b_right').attr('class').replace('disabled', '')
+    $('#b_right').attr('class', c)
+    c_pro -= 1
+    project(c_pro)
+  }
+  
+  if (c_pro == 0) {
+    var c = $('#b_left').attr('class')
+    $('#b_left').attr('class', c + ' disabled')
+  }
+}
+
+// Start Part
 window.onload = function() {
   lang_el = document.querySelector("#lang")
   Language()
+  SetMode()
+  var c = $('#b_left').attr('class')
+  $('#b_left').attr('class', c + ' disabled')
 };
+
+// Dark / Light Mode Setting
+const is_darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+var card = ['pro-card', 'boj-card', 'sk-card']
+var btn = ['sw', 'sb', 'so', 'beakjoon', 'solved', 'github', 'b_left', 'b_right', 'btn_1', 'btn_2']
+var cm = 1
+
+function LightMode() {
+    cm = 0
+    dark = 0
+    // body
+  $('#body').css({
+    color: '#7286D3',
+    backgroundColor: '#EEF1FF'
+  })
+      // card
+    for (var i=0; i < card.length; i++) {
+      $(`#${card[i]}`).attr('class', 'card border-primary mb-2 rounded-4 bg-transparent container page')
+    }
+    
+    // btn
+    for (var i=0; i < btn.length; i++) {
+      var name = `#${btn[i]}`
+      var c = $(name).attr('class').replace('dark', 'secondary')
+      $(name).attr('class', c)
+    }
+  
+  // Footer
+  $('#footer').attr('class', '')
+  $('#footer').css({backgroundColor: '#ACB1D6'})
+  
+  // nav
+  $('#nav').attr('class', 'navbar navbar-expand-lg sticky-top')
+  $('#nav').css({backgroundColor: '#ACB1D6'})
+  $('#mod').html('<i class="bi bi-sun"></i>')
+  
+  // Modal
+ $('#mo').attr('class', 'modal-content bg-white text-Black')
+  
+  // etc
+  $('#sk-de').attr('class', 'card border-info rounded-4 text-center bg-transparent')
+  $('#dropdown').attr('class', 'dropdown-menu dropdown-menu-secondary mx-2')
+}
+function DarkMode() {
+  cm = 1
+  dark = 1
+  // body
+  $('#body').css({
+    color: 'white',
+    backgroundColor: '#111316'
+  })
+  // body
+  $('#body').attr('class', 'color: white; background-color: #111316')
+  // card
+    for (var i=0; i < card.length; i++) { $(`#${card[i]}`).attr('class', 'card border-secondary mb-2 rounded-4 bg-transparent container page')}
+                                         
+    // btn
+   for (var i=0; i < btn.length; i++) {
+      var name = `#${btn[i]}`
+      var c = $(name).attr('class').replace('secondary', 'dark')
+      $(name).attr('class', c)
+    }
+  
+  // Footer
+  $('#footer').attr('class', 'bg-dark')
+  
+  // nav
+  $('#nav').attr('class', 'navbar navbar-expand-lg bg-dark sticky-top')
+  $('#mod').html('<i class="bi bi-moon-stars"></i>')
+  
+  // Modal
+  $('#mo').attr('class', 'modal-content bg-dark text-white')
+  
+  // etc
+  $('#sk-de').attr('class', 'card bg-dark rounded-4 text-center')
+  $('#dropdown').attr('class', 'dropdown-menu dropdown-menu-dark mx-2')
+}
+
+function SetMode() {
+  if (is_darkMode.matches == false) {
+    LightMode()
+  }
+}
+function BtnMode() {
+  if (cm == 1) { LightMode() } else { DarkMode() }
+}
+
+is_darkMode.addEventListener('change', (e) => {
+  if (e.matches) { // Dark
+    DarkMode()
+  } else { // Light
+    LightMode()
+  }
+});
