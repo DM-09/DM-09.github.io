@@ -11,77 +11,97 @@
     <!-- Files -->
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-    <title>DM</title>
+    <script src="https://kit.fontawesome.com/b9bfb743d5.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Dongmin 동민</title>
   </head>
-  <body style='background-color:#111316; color:white' class='h-100'>
-      <nav class="navbar bg-dark sticky-top">
-        <!-- lang dropdown -->
-        <button class="btn btn-secondary dropdown-toggle mx-4" data-bs-toggle="dropdown" id='lang'>Language</button>
-       <ul class="dropdown-menu dropdown-menu-dark mx-2">
-        <li class="dropdown-item" id='eng' onClick='Eng()'>English(영어)</li>
-        <li class="dropdown-item" id='kor' onClick='Kor()'>한국어(Kor)</li>
-       </ul>
-    </nav>
+  <body class='h-100 body' id='body'>
+    <nav class="navbar navbar-expand-lg bg-dark sticky-top" id='nav'>
+  <div class="container-fluid">
+    <a class="navbar-brand" style='color:white' href="#">DM</a>
+    <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-secondary" style='color:white'></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+         <li class="nav-item">
+          <a class="nav-link" style='color:white' id='mod' onClick='BtnMode()'><i class="bi bi-moon-stars"></i></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id='lang' style='color:white'> Language</a>
+          <ul class="dropdown-menu dropdown-menu-dark mx-2" id='dropdown'>
+            <li><a class="dropdown-item" onClick='Eng()' id='eng'>English(영어)</a></li>
+            <li><a class="dropdown-item" onClick='Kor()' id='kor'>한국어(Kor)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
    <center>
      <br>
      <div class='full-view'>
        <div class='mt-5'> </div>
        <div class='fs-4 mt-5'>
-       <span style='color:#ff7b72' id='def'>def </span><span style='color:#ffa657' id='DM'>DM</span><span id='para'>( ):     </span><br><span id='name'>    name </span><span style='color:#79c0ff' id='nn'>= </span><span style='color:#a5d6ff' id='name-area'>'DM'</span><br><span id='age'> age </span><span style='color:#79c0ff' id='an'>= </span><span style='color:#a5d6ff' id='age-area'>15</span>
       </div>
-       <div class="card border-secondary mt-5 rounded-4 bg-transparent container page mt-3" style='width:90%'>
-      <div class="card-body">
-       <p class="card-text my-3" id='about-de'></p>
+     <div class="container position-absolute top-50 start-50 translate-middle">
+       <h1 id='name' class='name'>Dongmin Shin</h1>
+       <span id='intro' class='fs-5'></span>
+       <div class='fs-3'>
+       <i class="fa-brands fa-github" onClick='window.open("https://github.com/DM-09")'></i>
+       <i class="fa-sharp fa-solid fa-code" onClick='window.open("https://solved.ac/profile/dongmin")'></i>
+       <i class="fa-sharp fa-regular fa-envelope" onClick='window.open("mailto:happydm09@naver.com")'></i>
+       </div>
      </div>
-    </div>
+       <div id='project'></div>
      </div>
      <!-- Github -->
-     <div class="card border-secondary mb-2 rounded-4 bg-transparent container page" style='width:90%'>
+     <div class="card border-secondary mb-2 rounded-4 bg-transparent container page" style='width:90%' id='pro-card'>
       <div class="card-body">
        <div class="card-title mx-3" style='text-align:left;'><h2>My work</h2></div>
        <p class="card-text">
         <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-4 mb-2">
-             <div class='card bg-dark rounded-4 card-text' style='width:87%' onClick='Open(6)'><span style='color: #0d6efd' class='fs-5'>Python Code</span><span id='py-code-de'></span><h4><i class="bi bi-github"></i></h4>
-              </div>
-            </div>
-            <div class="col-12 col-sm-4 mb-2">
-             <div class='card bg-dark rounded-4 card-text' style='width:87%' onClick='Open(7)'><span style='color: #0d6efd' class='fs-5'>Anywhere Bing AI</span><span id='anywhere-de'></span><h4><i class="bi bi-github"></i></h4>
-              </div>
-            </div>
-            <div class="col-12 col-sm-4">
-             <div class='card bg-dark rounded-4 card-text mb-4' style='width:87%' onClick='Open(8)'><span style='color: #0d6efd' class='fs-5'>Tools</span><span id='tools-de'></span><h4><i class="bi bi-github"></i></h4>
-              </div>
-            </div>
+           <div class="card-body">
+             <div class='position-absolute top-50 start-0 ms-3'><a class='btn btn-dark rounded-3 btn-lg' id='b_left' onClick='preview()'><i class="fa-solid fa-angle-left"></i></a></div>
+             
+             <div class='position-absolute top-50 end-0 me-3'><a class='btn btn-dark rounded-3 btn-lg' id='b_right' onClick='next()'><i class="fa-solid fa-angle-right"></i></a></div>
+            <b><h4 class="card-title" id='c_title'></h4></b>
+            <p class="card-text" id='c_txt'></p>
           </div>
         </div>
      </div>
     </div>
-    <a onClick='window.open("https://github.com/DM-09")' class="btn btn-dark rounded-3 container page mb-5" style='width:90%'>Github</a>
+    <a onClick='window.open("https://github.com/DM-09")' class="btn btn-dark rounded-3 container page mb-5" style='width:90%' id='github'>Github <i class="fa-solid fa-angle-right"></i></a>
     <div class='mb-3'></div>
      <br><br>
-     <!-- Beakjoon -->
-     <div class="card border-secondary mb-5 rounded-4 bg-transparent container page" style='width:90%'>
+     <!-- Baekjoon -->
+     <div class="card border-secondary mb-5 rounded-4 bg-transparent container page" style='width:90%' id='boj-card'>
       <div class="card-body">
-       <div class="card-title mx-3" style='text-align:left;'><h2>Beakjoon</h2><h5 id='b-sum'></h5>         </div>
+       <div class="card-title mx-3" style='text-align:left;'><h2>Baekjoon</h2><h5 id='b-sum'></h5>         </div>
        <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dongmin" alt="" style="max-width: 90%;">
        <p class="card-text my-3" id='sol-de'></p>
-       <a onClick='window.open("https://www.acmicpc.net/user/dongmin")' class="btn btn-dark rounded-3" style='width:45%'>Beakjoon</a>
-       <a onClick='window.open("https://solved.ac/profile/dongmin")' class="btn btn-dark rounded-3" style='width:45%'>Solved.ac</a>
+       <a onClick='window.open("https://www.acmicpc.net/user/dongmin")' class="btn btn-dark rounded-3" style='width:45%' id='beakjoon'>Baekjoon <i class="fa-solid fa-angle-right"></i></a>
+       <a onClick='window.open("https://solved.ac/profile/dongmin")' class="btn btn-dark rounded-3" style='width:45%' id='solved'>Solved.ac <i class="fa-solid fa-angle-right"></i></a>
      </div>
+       <div id='skill'></div>
     </div>
     <div class='mb-3'> </div>
     <br>
      <!-- Skill -->
-     <div class="card border-secondary mb-4 rounded-4 bg-transparent container page" style='width:90%'>
-      <div class="card-body">
-       <div class="card-title mx-3" style='text-align:left;'><h2>Skills</h2></div>
-       <p class="card-text"></p>
-        <a class='btn bg-dark text-white my-3 rounded-3' onClick='Skill("Python")'> Python </a>
-        <a class='btn bg-dark text-white my-3 rounded-3' onClick='Skill("Web")'> Web </a>
-        <a class='btn bg-dark text-white my-3 rounded-3' onClick='Skill("Lua")'> Etc </a>
-        <div class='card bg-dark rounded-4 card-text' style='width:90%' id='sk-de'> <br> </div>
+     <div class="card-title" style='text-align:left;'><h2 class='container' style='width:95%'>Skills</h2></div>
+     <div class="card border-secondary mb-4 rounded-4 bg-transparent container page" style='width:90%' id='sk-card'>
+      <div class="card-body h5">
+        <div class="card-title mx-3" style='text-align:left;'>
+        <a onClick='Skill("Web")' class="btn btn-dark rounded-3 mb-1" id='sw'>Web</a> <a onClick='Skill("Back")' class="btn btn-dark rounded-3 mb-1" id='sb'>Backend</a> <a onClick='Skill("Other")' class="btn btn-dark rounded-3 mb-1" id='so'>Other</a>
+        <br><br>
+        <div class='card bg-dark rounded-4 text-center' style='width:100%' id='sk-de'></div>
+        <div>
+          <br><br>
+          <h6 class="fa-sharp fa-solid fa-square" style='color:#A566FF'> Good</h6>
+          <h6 class="fa-sharp fa-solid fa-square" style='color:#6799FF'> So-so</h6>
+          <h6 class="fa-sharp fa-solid fa-square" style='color:#A6A6A6'> Bad</h6>
+        </div>
+      </div>
      </div>
     </div>
     <div class='mb-3'> </div>
@@ -89,16 +109,18 @@
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1">
      <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark text-white">
+      <div class="modal-content bg-dark text-white" id='mo'>
        <div class="modal-body"><h5 class="modal-title font-weight-lg" id='m-title'></h5><p class="font-weight-md" id='m-content'></p><div class="d-grid gap-2 d-flex justify-content-end"><button button-color="btn-light" button-text-color="text-dark" is-dismiss="true" class="col col-md-auto btn btn-light text-dark" data-bs-dismiss="modal" id='m-close'></button></div></div>
         </div>
       </div>
     </div>
      <!-- Footer -->
-     <footer class='bg-dark' style='text-align:left'>
+     <footer class='bg-dark' style='text-align:left' id='footer'>
       <br><br>
-      <h3 class='mx-4'>@DM</h3>
-      <a class='a' style='color:white'><h5 id='SNS' class='mx-4'><i class="bi bi-github" onClick='Open(3)'></i> <i class="bi bi-envelope-fill" OnClick='Open(4)'></i> <i class="bi bi-three-dots-vertical" onClick='Add_SNS()'></i></h5></a>
+      <div class='container'>
+      <h4 class='mx-2'>@Dongmin</h4>
+      <a class='a' style='color:white'><h5 id='SNS' class='mx-2'><i class="bi bi-github" onClick='Open(3)'></i> <i class="bi bi-envelope-fill" OnClick='Open(4)'></i> <i class="bi bi-three-dots-vertical" onClick='Add_SNS()'></i></h5></a>
+       </div>
        <br>
     </footer>
    </center>
