@@ -1,5 +1,6 @@
 var lang = 0
 var c = 0
+var count = 0
 
 function language() {
  var l = navigator.language
@@ -30,10 +31,12 @@ function Main() {
 
 function Data() {
   var e = document.querySelector("#box")
+  count += 1
+  MoreData()
   if (lang == 1) {
-  e.innerHTML = `<h3>Data</h3>그냥 기타 데이터 모아두는 곳 입니다. <br><br> <a href='https://happydm09.github.io/Page/Data/badge.html'>badge - solved.ac</a><br><a href='https://happydm09.github.io/Page/Data/bg.html'>background - solved.ac</a><br><a href='https://happydm09.github.io/Page/solved.ac/dongmin/c'>codeforces ver profile - solved.ac</a>`
+  e.innerHTML = `<h3>Data</h3>그냥 기타 데이터(아카이브) 모아두는 곳 입니다. <br><br> <a href='https://goor.me/6gnf'>코딩 파티 - 틱텍토 만들기 수료증</a>`
   } else {
-    e.innerHTML = `<h3>Data</h3>It's just a collection of other data.<br><br> <a href='https://happydm09.github.io/Page/Data/badge.html'>badge - solved.ac</a><br><a href='https://happydm09.github.io/Page/Data/bg.html'>background - solved.ac</a><br><a href='https://happydm09.github.io/Page/solved.ac/dongmin/c'>codeforces ver profile - solved.ac</a>`
+    e.innerHTML = `<h3>Data</h3>This is just a place to collect other data (archives). <br><br> <a href='https://goor.me/6gnf'>Coding Party - Tic Tac Toe Making Certificate</a>`
   }
   
   if (c == 2) {
@@ -41,6 +44,30 @@ function Data() {
     c = 0
   } else {
     c = 2
+  }
+}
+
+function MoreData() {
+  if (count == 4) {
+    $('#more').attr('onClick', 'more()')
+    $('#more').attr('class', 'btn btn-secondary mb-1')
+    $('#more').html('More')
+  }
+}
+
+function more() {
+  var e = document.querySelector("#box")
+  if (lang == 1) {
+  e.innerHTML = `<h3>More</h3>기타 페이지 입니다. 숨겨진 페이지이지만 쓸모없는 창고 같은 페이지입니다.<br><br> <a href='https://happydm09.github.io/Page/Data/badge.html'>badge - solved.ac</a><br><a href='https://happydm09.github.io/Page/Data/bg.html'>background - solved.ac</a><br><a href='https://happydm09.github.io/Page/solved.ac/dongmin/c'>codeforces ver profile - solved.ac</a>`
+  } else {
+    e.innerHTML = `<h3>More</h3>Other pages. It's a hidden page, but it's like a useless warehouse.<br><br> <a href='https://happydm09.github.io/Page/Data/badge.html'>badge - solved.ac</a>< <a href='https://happydm09.github.io/Page/Data/bg.html'>background - solved.ac</a><br><a href='https://happydm09.github .io/Page/solved.ac/dongmin/c'>codeforces ver profile - solved.ac</a>`
+  }
+  
+  if (c == 5) {
+    e.innerHTML = ''
+    c = 0
+  } else {
+    c = 5
   }
 }
 
