@@ -34,9 +34,9 @@ function Data() {
   count += 1
   MoreData()
   if (lang == 1) {
-  e.innerHTML = `<h3>Data</h3>그냥 기타 데이터(아카이브) 모아두는 곳 입니다. <br><br> <a href='https://goor.me/6gnf'>코딩 파티 - 틱텍토 만들기 수료증</a>`
+  e.innerHTML = `<h3>Data</h3>그냥 기타 데이터(아카이브) 모아두는 곳 입니다. <br><br> <a href='https://edu.goorm.io/cert/EhmOjDikCj'>코딩 파티 - 틱텍토 만들기 수료증</a>`
   } else {
-    e.innerHTML = `<h3>Data</h3>This is just a place to collect other data (archives). <br><br> <a href='https://goor.me/6gnf'>Coding Party - Tic Tac Toe Making Certificate</a>`
+    e.innerHTML = `<h3>Data</h3>This is just a place to collect other data (archives). <br><br> <a href='https://edu.goorm.io/cert/EhmOjDikCj'>Coding Party - Tic Tac Toe Making Certificate</a>`
   }
   
   if (c == 2) {
