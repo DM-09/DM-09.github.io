@@ -10,7 +10,7 @@ function CopyURL() {
   el.value = URL
   el.select();
   document.execCommand("copy");
-  alert('복사됨')
+  alert('복사됨 Copied')
 }
 
 function getAPI(t) {
