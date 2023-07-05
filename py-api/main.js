@@ -14,7 +14,7 @@ function CopyURL() {
 }
 
 function getAPI(t) {
-  var text = document.getElementById("test").value
+  var text = document.getElementById("test_u").value
   const xhr = new XMLHttpRequest();
   
   if (t == 'py') { text = ChangeURL(text) }
