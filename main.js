@@ -14,6 +14,7 @@ function Eng() {
   lang_el.innerHTML = 'Language'
   document.querySelector("#sk-de").innerHTML = ' <br> '
   document.querySelector("#m-close").innerHTML = 'Close'
+  document.querySelector("#descr").innerHTML = ''
   all_fun()
 }
 function Kor() {
@@ -22,6 +23,7 @@ function Kor() {
   lang_el.innerHTML = '언어'
   document.querySelector("#sk-de").innerHTML = ' <br> '
   document.querySelector("#m-close").innerHTML = '닫기'
+  document.querySelector("#descr").innerHTML = ''
   all_fun()
 }
 function Language() {
@@ -75,7 +77,8 @@ function Copy(t) {
   alert('복사됨 Copied')
 }
 function Open(n) {
-  var page = ['https://github.com/DM-09/BeakjoonCode', 'https://github.com/DM-09/Web-Extension', 'https://github.com/DM-09', 'mailto:happydm09@naver.com', 'https://addons.mozilla.org/en-US/firefox/user/17626890/', 'https://github.com/DM-09/PythonCode','https://github.com/DM-09/Bing-AI-for-Any-browser', 'https://github.com/DM-09/tools']
+  var page = ['https://github.com/happydm09/PS', 'https://github.com/DM-09/Web-Extension', 'https://github.com/DM-09', 'mailto:happydm09@naver.com', 'https://addons.mozilla.org/en-US/firefox/user/17626890/', 'https://github.com/DM-09/PythonCode','https://github.com/DM-09/Bing-AI-for-Any-browser', 'https://github.com/DM-09/tools', 'https://codeforces.com/profile/DM-09']
+  
   if (lang == 1) {
     page[4] = 'https://addons.mozilla.org/ko/firefox/user/17626890/'
   } else {
@@ -119,25 +122,31 @@ function boj() {
   var de = document.querySelector("#sol-de")
 
   if (lang == 1) {
-    de.innerHTML = "꾸준히 문제를 풀고 있으며 알고리즘 실력을 키워나가고 있습니다. <br> 100일 연속으로 문제를 해결했었습니다. <br> <h8><a href='' class='a' onClick='Open(1)' style='color:gray'>(깃허브 리포지토리)</a></h8>"
+    de.innerHTML = "꾸준히 문제를 풀고 있으며 알고리즘 실력을 키워나가고 있습니다. <br> <a href='' class='a' onClick='Open(9)'>Codeforces</a>등 다양한 곳에서 문제를 풉니다. <br> 100일 연속으로 문제를 해결했었습니다. <br> <h8><a href='' class='a' onClick='Open(1)' style='color:gray'>(깃허브 리포지토리)</a>"
   } else {
-    de.innerHTML = "I am constantly solving problems and improving my algorithm skills.<br> I have been solved the problem for 100 days in a row. <br> <h8><a onClick='Open(1)' style='color:gray'>(Github Repository)</a></h8>"
+    de.innerHTML = "I am constantly solving problems and improving my algorithm skills. <br> <a href='' class='a' onClick='Open(9)'>Codeforces</a>, etc. Solve problems in various places. <br> I have been solved the problem for 100 days in a row. <br> <h8><a onClick='Open(1)' style='color:gray'>(Github Repository)</a></h8>"
   }
 }
 function Skill(name) {
   var de = document.querySelector("#sk-de")
-  var tab = {'Web': `<br><li class="bi bi-bootstrap mb-1 soso"> - Bootstrap</span></li><li class='soso'><i class="fab fa-js-square mb-1"></i> - Javascript</li><li class='soso'><i class="fa-solid fa-puzzle-piece"></i> - Extension</li><br>`, 'Back' : `<br><li class='good'><i class="fa-brands fa-python mb-1"></i> - Python</li><li class='soso'><span class="fa-light fa-square"></span> - Lua</li><br>`, 'Other': `<br><li class='soso mb-1'><i class="fa-brands fa-github"></i> - Github</li><li class='bad'><i class="fa-brands fa-android"></i> - App(Java)</li><br>`}
+  var des = document.querySelector("#descr")
+  var tab = {'Web': `<br><li class="bi bi-bootstrap mb-1 soso"> - Bootstrap</span></li><li class='soso'><i class="fab fa-js-square mb-1"></i> - Javascript</li><li class='soso'><i class="fa-solid fa-puzzle-piece"></i> - Extension</li><br>`, 'Back' : `<br><li class='good'><i class="fa-brands fa-python mb-1"></i> - Python</li><li class='soso'><span class="fa-light fa-square"></span> - Lua</li><br>`, 'Other': `<br><li class='soso mb-1'><i class="fa-solid fa-pepper-hot"></i> - Flask(python)</li><li class='bad'><i class="fa-brands fa-android"></i> - App(Java)</li><br>`, 'DevOps' : `<br><li class='soso mb-1'><i class="fa-brands fa-github"></i> - Github</li><li class='soso'><i class="bi bi-triangle-fill"></i> - Vercel</li><li class='bad'><i class="fa-brands fa-git-alt"></i> - Git</li><br> `}
   
-  var ko = {'Web' : `취미로 웹 제작을 하고 있고 <br> <a href='https://github.com/DM-09/Web-Extension'>브라우저 확장도 만듭니다.</a>`, 'Back' : `파이썬을 가장 잘 다루며 Lua도 할 줄 압니다.`, 'Other' : `깃허브도 조금 합니다. 안드로이드 앱은 거의 못 만듭니다.`}
+  var ko = {'Web' : `취미로 웹 제작을 하고 있고 <br> <a href='https://github.com/DM-09/Web-Extension'>브라우저 확장도 만듭니다.</a>`, 'Back' : `파이썬을 가장 잘 다루며 Lua도 할 줄 압니다.`, 'Other' : `주로 API를 만들 때 Flask를 사용합니다. 안드로이드 앱은 만들어본 경험만 있습니다.`, 'DevOps' : `주로 Github(git)로 관리하고 호스팅 할땐 Vercel을 사용합니다.`}
   
-  var en = {'Web' : `I do web creation as a hobby, <br> <a href='https://github.com/DM-09/Web-Extension'>I also create browser extensions.</a>`, 'Back' : `I mainly use Python best and knows Lua as well.`, 'Other': `I can Github also does a little bit. I almost can't make  Android apps`}
+  var en = {'Web' : `I do web creation as a hobby, <br> <a href='https://github.com/DM-09/Web-Extension'>I also create browser extensions.</a>`, 'Back' : `I mainly use Python best and knows Lua as well.`, 'Other': `I mainly use Flask to create APIs. I only have experience making Android apps.`, 'DevOps' : `I mainly use Github(git) and Vercel is used for hosting.`}
   var n = en[name]
   
   if (lang == 1) {n = ko[name]}
   
-  de.innerHTML = tab[name] + '<h6>' + n + '</h6><br>'
+  var names = name
+  if (names == 'Back') {names = 'Backend'}
+  
+  de.innerHTML = tab[name]
+  des.innerHTML =  `<h4>${names}</h4><h6>` + n + '</h6><br>'
   if (c_n == name) {
     de.innerHTML = ' <br> '
+    des.innerHTML = ''
     c_n = ''
   } else { c_n = name }
 }
@@ -202,8 +211,8 @@ window.onload = function() {
 // Dark / Light Mode Setting
 const is_darkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-var card = ['pro-card', 'boj-card', 'sk-card']
-var btn = ['sw', 'sb', 'so', 'beakjoon', 'solved', 'github', 'b_left', 'b_right', 'btn_1', 'btn_2']
+var card = ['pro-card', 'boj-card']
+var btn = ['sw', 'sb', 'so', 'beakjoon', 'solved', 'github', 'b_left', 'b_right', 'btn_1', 'btn_2', 'Dev']
 var cm = 1
 
 function LightMode() {
@@ -224,8 +233,8 @@ function LightMode() {
       var name = `#${btn[i]}`
       var c = $(name).attr('class').replace('dark', 'secondary')
       $(name).attr('class', c)
-    }
-  
+    }  
+
   // Footer
   $('#footer').attr('class', '')
   $('#footer').css({backgroundColor: '#ACB1D6'})
@@ -239,7 +248,6 @@ function LightMode() {
  $('#mo').attr('class', 'modal-content bg-white text-Black')
   
   // etc
-  $('#sk-de').attr('class', 'card border-info rounded-4 text-center bg-transparent')
   $('#dropdown').attr('class', 'dropdown-menu dropdown-menu-secondary mx-2')
 }
 function DarkMode() {
@@ -273,7 +281,6 @@ function DarkMode() {
   $('#mo').attr('class', 'modal-content bg-dark text-white')
   
   // etc
-  $('#sk-de').attr('class', 'card bg-dark rounded-4 text-center')
   $('#dropdown').attr('class', 'dropdown-menu dropdown-menu-dark mx-2')
 }
 
