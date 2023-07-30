@@ -55,6 +55,7 @@
      </div>
        <div id='project'></div>
      </div>
+     
      <!-- Github -->
      <div class="card border-secondary mb-2 rounded-4 bg-transparent container page" style='width:90%' id='pro-card'>
       <div class="card-body">
@@ -72,12 +73,13 @@
      </div>
     </div>
     <a onClick='window.open("https://github.com/DM-09")' class="btn btn-dark rounded-3 container page mb-5" style='width:90%' id='github'>Github <i class="fa-solid fa-angle-right"></i></a>
-    <div class='mb-3'></div>
-     <br><br>
+    <div class='mb-3'> </div>
+     <br><br><br>
+     
      <!-- Baekjoon -->
+     <div class="card-title" style='text-align:left;'><h2 class='container mb-2' style='width:95%'>Baekjoon</h2></div>
      <div class="card border-secondary mb-5 rounded-4 bg-transparent container page" style='width:90%' id='boj-card'>
       <div class="card-body">
-       <div class="card-title mx-3" style='text-align:left;'><h2>Baekjoon</h2><h5 id='b-sum'></h5>         </div>
        <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=dongmin" alt="" style="max-width: 90%;">
        <p class="card-text my-3" id='sol-de'></p>
        <a onClick='window.open("https://www.acmicpc.net/user/dongmin")' class="btn btn-dark rounded-3" style='width:45%' id='beakjoon'>Baekjoon <i class="fa-solid fa-angle-right"></i></a>
@@ -88,15 +90,15 @@
     <div class='mb-3'> </div>
     <br>
      <!-- Skill -->
-     <div class="card-title" style='text-align:left;'><h2 class='container' style='width:95%'>Skills</h2></div>
+     <div class="card-title" style='text-align:left;'><h2 class='container mb-2' style='width:95%'>Skills</h2></div>
+     <div class="card border-0 mb-1 bg-transparent container page">
+       <div style='text-align:left;'> <a onClick='Skill("Web")' class="btn btn-dark rounded-3 mb-1" id='sw'>Web</a> <a onClick='Skill("Back")' class="btn btn-dark rounded-3 mb-1" id='sb'>Backend</a> <a onClick='Skill("DevOps")' class="btn btn-dark rounded-3 mb-1" id='Dev'>DevOps</a> <a onClick='Skill("Other")' class="btn btn-dark rounded-3 mb-1" id='so'>Other</a></div></div>
      <div class="card border-secondary mb-4 rounded-4 bg-transparent container page" style='width:90%' id='sk-card'>
       <div class="card-body h5">
         <div class="card-title mx-3" style='text-align:left;'>
-        <a onClick='Skill("Web")' class="btn btn-dark rounded-3 mb-1" id='sw'>Web</a> <a onClick='Skill("Back")' class="btn btn-dark rounded-3 mb-1" id='sb'>Backend</a> <a onClick='Skill("Other")' class="btn btn-dark rounded-3 mb-1" id='so'>Other</a>
-        <br><br>
-        <div class='card bg-dark rounded-4 text-center' style='width:100%' id='sk-de'></div>
+        <div class='card bg-transparent rounded-4 text-center border-0' style='width:100%' id='sk-de'></div>
         <div>
-          <br><br>
+          <center><h6 id='descr' class='mb-2'></h6></center>
           <h6 class="fa-sharp fa-solid fa-square" style='color:#A566FF'> Good</h6>
           <h6 class="fa-sharp fa-solid fa-square" style='color:#6799FF'> So-so</h6>
           <h6 class="fa-sharp fa-solid fa-square" style='color:#A6A6A6'> Bad</h6>
@@ -110,7 +112,7 @@
     <div class="modal fade" id="modal" tabindex="-1">
      <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-white" id='mo'>
-       <div class="modal-body"><h5 class="modal-title font-weight-lg" id='m-title'></h5><p class="font-weight-md" id='m-content'></p><div class="d-grid gap-2 d-flex justify-content-end"><button button-color="btn-light" button-text-color="text-dark" is-dismiss="true" class="col col-md-auto btn btn-light text-dark" data-bs-dismiss="modal" id='m-close'></button></div></div>
+       <div class="modal-body"><h5 class="modal-title  font-weight-lg" id='m-title'></h5><p class="font-weight-md" id='m-content'></p><div class="d-grid gap-2 d-flex justify-content-end"><button button-color="btn-light" button-text-color="text-dark" is-dismiss="true" class="col col-md-auto btn btn-light text-dark" data-bs-dismiss="modal" id='m-close'></button></div></div>
         </div>
       </div>
     </div>
