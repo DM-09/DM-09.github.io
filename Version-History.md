@@ -33,4 +33,6 @@
 ### 1.0 ver
 - 첫 정식 버전, 오타 수정 및 UI 변경/추가 등
 - Misunderstanding fixes and UI changes/adds, etc.
+
+V1.1 -Fixed UI, UI수정
 </details>
