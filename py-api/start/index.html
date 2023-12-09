@@ -28,7 +28,7 @@
    <script>
       function ChangeURL() {
   var URL = document.getElementById("url")
-  var new_URL = URL.value.replace(/|//g, '~').replace(/\?/g, '$')
+  var new_URL = URL.value.replace(/\//g, '|').replace(/\?/g, '$')
   URL.value = 'https://api-py.vercel.app/' + new_URL
   URL.select();
   document.execCommand("copy");
