@@ -19,7 +19,7 @@
       <h2 class='mb-3'>py-api Tool</h2>
       <input type="text" class="form-control bg-dark text-white" placeholder="URL" id='url' value=''>
       <div class="form-text">API URL을 입력하세요. Enter the API URL.</div>
-      <div class="form-text mb-2">URL에 ~와 $가 없어야 합니다 URLs must not contain ~ and $</div>
+      <div class="form-text mb-2">URL에 |와 $가 없어야 합니다 URLs must not contain | and $</div>
       <button type="submit" class="btn btn-secondary" onClick='ChangeURL()'>Start py-api</button>
      </div>
     </div>
@@ -28,7 +28,7 @@
    <script>
       function ChangeURL() {
   var URL = document.getElementById("url")
-  var new_URL = URL.value.replace(/\//g, '~').replace(/\?/g, '$')
+  var new_URL = URL.value.replace(/|//g, '~').replace(/\?/g, '$')
   URL.value = 'https://api-py.vercel.app/' + new_URL
   URL.select();
   document.execCommand("copy");
