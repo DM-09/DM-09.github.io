@@ -32,7 +32,8 @@
         
         <br><br>
         <h2 class='font' id='usage'>사용</h2>
-        <mark>https://api-py.vercel.app/?r=[URL]</mark>
+        <div class='mb-4'>Method - <span class='bold' id='get' onClick='GetMethod()'>Get</span> <span id='post' onClick='PostMethod()'>Post</span></div>
+        <mark id='mark'>https://api-py.vercel.app/?r=[URL]</mark>
         <div id='usage_des'>위 [URL] 부분에 API URL을 넣으시면 됩니다. <br> <p><i class="fa-solid fa-circle-info"></i> <a href="#" onClick='oldURLde()'>구버전 URL</a>도 작동 합니다</p></div>
         <div id='more'></div>
         
@@ -41,20 +42,53 @@
   <input type="text" id='gform' class="form-control nav-bg nav-color" placeholder="Enter the API URL">
   <button class="btn btn-outline-secondary" type="button" id="go" onClick='Copy()'>시작</button>
 </div>
+ 
+  
+ <div class="form-floating" id='msb'></div>
         
         <br>
-        <h2 class='font' id='test'>테스트</h2>
+        <h2 class='font' id='test'></h2>
         <div class="input-group mb-3">
   <input type="text" id='tform' class="form-control nav-bg nav-color" placeholder="Enter the API URL">
   <button class="btn btn-outline-secondary" id='xhr' type="button" onClick='GetAPI("")' >XHR(기본)</button><button class="btn btn-outline-secondary" type="button" onClick='GetAPI("py-api")'>py-api</button>
       </div>
+        <div class="form-floating mb-1" id='mtb'></div>
         <div id='test_de'></div>
         
-       <br>
-        <h2 class='font' id='caution'>주의 사항</h2>
-        <div id='caution_des'><li>Get Method만 지원합니다</li>
-        <li>파이썬을 사용하여 시간이 조금 소요됩니다</li>
-        <li>예러가 나면(잘못된 URL 등) 'Error'를 반환합니다</li></div>
+        <br>
+        <h2 class='font' id='ecode'></h2>
+        <div>
+            <table>
+    <tr>
+      <th scope="col" id='col-c'></td>
+      <th scope="col">Method</td>
+      <th scope="col" id='col-n'></td>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td>POST</td>
+      <td id='c1'></td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>POST</td>
+      <td id='c2'></td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td>GET</td>
+      <td id='c3'></td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td>GET</td>
+      <td id='c4'></td>
+    </tr>
+  </table>
+        </div>
+        <br>
+        <h2 class='font' id='caution'></h2>
+        <div id='caution_des'></div>
     </div>
     </div>
       <center>
